@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+<head>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <title>restTest</title>
+</head>
+<body ng-app = 'restTestApp' ng-controller='transactionController as ctr'>
+  <div class='header'>
+    <h2>Rest Test</h2>
+    <button class='left' ng-click='prevPage()'>&#8592</button>
+    <button class ='right' ng-click='nextPage()'>&#8594</button>
+  </div>
+
+  <table id="tbl1">
+    <thead>
+      <tr class ='tblHead'>
+        <td class='row1'>Date</td>
+        <td class='row2'>Company</td>
+        <td class='row3'>Ledger</td>
+        <td class='row4'>{{pageTotal | currency }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="t in transactions">
+        <td>{{t.Date | date : 'mediumDate'}}</td>
+        <td class='textBold'>
+          {{t.Company | cleanName }}
+        </td>
+        <td>{{t.Ledger}}</td>
+        <td class='textBold'>{{t.Amount| currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div ng-repeat = "c in categories">
+    <h2 class="tblLabel">{{c.name}}</h2>
+    <table >
+      <thead>
+        <tr class ='tblHead'>
+          <td class='row1-2'>Date</td>
+          <td class='row2-2'>Company</td>
+          <td class='row3-2'>{{c.totalAmount | currency }}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="t in c.transactions">
+          <td>{{t.Date | date : 'mediumDate'}}</td>
+          <td class='textBold'>
+            {{t.Company | cleanName }}
+          </td>
+          <td class='textBold'>{{t.Amount| currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <table>
+    <thead>
+      <tr class ='tblHead'>
+        <td class='row1'>Date</td>
+        <td class='row3-2'>Daily Total</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="d in dailyTotal">
+        <td>{{d.date | date : 'mediumDate'}}</td>
+        <td class='textBold'>{{d.total | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+  <div class='notes'> <label>Total Transactions: {{totalTransactionCount}}</label><br>  
+    <label>You are on page {{pageNumber}}</label> </div>
+
+
+
+
+    <script src="vendor/angular.min.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+  </html>

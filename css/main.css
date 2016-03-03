@@ -1,0 +1,132 @@
+/*import init.css to reset style*/
+@import url("init.css");
+/*import Source Sans Pro font from google font */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  background:#f6f5f3;
+  width:100%;
+}
+
+label{
+  font-weight: 700;
+  font-size: 12px;
+}
+
+button{
+  background: rgba(0,0,0,0);
+  border: none;
+  border-radius: 50px;
+  width:30px;
+  height:30px;
+  color:#ffffff;
+}
+
+button:hover{
+  background: rgba(0,0,0,0.2);
+}
+
+.left{
+  float: left;
+  margin-top: -45px;
+  margin-left: 10px;
+
+}
+
+.right{
+  float: right;
+  margin-top: -45px;
+  margin-right: 10px;
+}
+
+.header{
+  background: #007A75;
+  text-align: center;
+  position: fixed;
+  width:100%;
+  top:0px;
+}
+
+.header h2{
+  font-size: 16px;
+  color: #ffffff;
+  padding:20px 0px 20px 0px;
+  margin:0px;
+
+}
+
+table{
+  border-collapse: collapse;
+  border: 0.5px solid #e8e8e8;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 25px;
+}
+
+#tbl1{
+  margin-top: 100px;
+}
+
+.row1 .row4{
+  width:10%;
+}
+
+.row2 .row3{
+  width:40%;
+}
+
+.row1-2{
+  width:13.3%;
+}
+.row2-2{
+  width:73.3%;
+}
+.row3-2{
+ width:13.3%;
+}
+
+tr{
+  background: #f7f7f7;
+  border: 0.25px solid #e8e8e8;
+}
+
+table tr:nth-child(odd){
+  color:#007A75;
+}
+
+td{
+  font-size: 12px;
+  padding: 10px 10px 10px 10px;
+}
+
+td.textBold{
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tblHead{
+  background:#ffffff;
+  font-weight: 700;
+  color:#007A75;
+  border: 0.5px solid #e8e8e8;
+}
+
+.tblHead td{
+  font-size: 14px;
+}
+
+.tblLabel{
+  margin-left: 6%;
+  padding-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.notes{
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
