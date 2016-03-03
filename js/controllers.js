@@ -21,10 +21,8 @@ appCtrs.controller('transactionController', function($scope, transactionAPIServi
   function updateTable(action){
     transactionAPIService.getTransactions(pageNumber)
     .success(function(response){
-      console.log(response);
       $scope.totalTransactionCount = response.totalCount;
       $scope.pageNumber = response.page;
-      console.log(calcDailyAmount(response.transactions));
       $scope.categories = categorizeTransaction(response.transactions);
       $scope.dailyTotal = calcDailyAmount(response.transactions);
       $scope.transactions = markDuplicates(response.transactions);
